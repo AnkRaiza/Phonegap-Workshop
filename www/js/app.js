@@ -19,6 +19,7 @@
 				);
 			};
 		}
+	FastClick.attach(document.body);
 	}, false);
 	$('.search-key').on('keyup', findByName);
     $('.help-btn').on('click', function() {
