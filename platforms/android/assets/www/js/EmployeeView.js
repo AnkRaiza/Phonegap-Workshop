@@ -79,7 +79,7 @@ var EmployeeView = function (employee) {
                 var videoElement = document.createElement('video');
                 videoElement.controls = 'controls';
                 videoElement.src = entry.toNativeURL();
-                document.videoElementById("output").appendChild(imgElement);
+                document.videoElementById("videoPlayerDiv").appendChild(imgElement);
             });
         });
         //player.load();
