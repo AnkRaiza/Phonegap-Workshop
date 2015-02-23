@@ -1,34 +1,44 @@
-var app = {
+// We use an "Immediate Function" to initialize the application to avoid leaving anything behind in the global scope
+(function () {
 
-    initialize: function () {
-        var self = this;
-        this.store = new EmployeeService(function () {
-            $('body').html(new HomeView(self.store).render().el);
+    /* ---------------------------------- Local Variables ---------------------------------- */
+    var service = new EmployeeService();
+    var slider = new PageSlider($('body'));
+    HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
+    EmployeeListView.prototype.template = Handlebars.compile($("#employee-list-tpl").html());
+    EmployeeView.prototype.template = Handlebars.compile($("#employee-tpl").html());
+    service.initialize().done(function () {
+        router.addRoute('', function () {
+            slider.slidePage(new HomeView(service).render().$el);
         });
-    },
 
-    registerEvents: function () {
-        var self = this;
-        // Check of browser supports touch events...
-        if (document.documentElement.hasOwnProperty('ontouchstart')) {
-            // ... if yes: register touch event listener to change the "selected" state of the item
-            $('body').on('touchstart', 'a', function (event) {
-                $(event.target).addClass('tappable-active');
+        router.addRoute('employees/:id', function (id) {
+            service.findById(parseInt(id)).done(function (employee) {
+                slider.slidePage(new EmployeeView(employee).render().$el);
             });
-            $('body').on('touchend', 'a', function (event) {
-                $(event.target).removeClass('tappable-active');
-            });
-        } else {
-            // ... if not: register mouse events instead
-            $('body').on('mousedown', 'a', function (event) {
-                $(event.target).addClass('tappable-active');
-            });
-            $('body').on('mouseup', 'a', function (event) {
-                $(event.target).removeClass('tappable-active');
-            });
+        });
+
+        router.start();
+    });
+
+    /* --------------------------------- Event Registration -------------------------------- */
+    document.addEventListener('deviceready', function () {
+        if (navigator.notification) { // Override default HTML alert with native dialog
+            window.alert = function (message) {
+                navigator.notification.alert(
+				message,    // message
+				null,       // callback
+				"Workshop", // title
+				'OK'        // buttonName
+				);
+            };
         }
-    },
+        FastClick.attach(document.body);
+    }, false);
+    $('.help-btn').on('click', function () {
+        alert("Employee Directory v3.4");
+    });
 
-};
-
-app.initialize();
+    /* ---------------------------------- Local Functions ---------------------------------- */
+    
+}());
