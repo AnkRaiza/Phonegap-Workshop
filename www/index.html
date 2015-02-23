@@ -103,14 +103,29 @@
                       </a>
                   </li>
                   <li class="table-view-cell media">
-                      <a hre="#" class="push-right change-pic-btn">
+                      <a href="#" class="push-right change-pic-btn">
                           <span class="media-object pull-left"></span>
                           <div class="media-body">
                               Change Picture
                           </div>
                       </a>
                   </li>
+                  <li class="table-view-cell media">
+                      <a href="#" class="push-right play-vid-btn">
+                          <span class="media-object pull-left"></span>
+                          <div class="media-body">
+                              Play a video
+                          </div>
+                      </a>
+                  </li>
               </ul>
+          </div>
+          <div class="card videoPlayerDiv" style="display:none;">
+              <video id='videoPlayer' width="320" height="240" controls="controls">
+                  <source id='mp4Source' src="movie.mp4" type="video/mp4" />
+                  <source id='oggSource' src="movie.ogg" type="video/ogg" />
+                  video tag not supported
+              </video>
           </div>
       </div>
   </script>

@@ -5,6 +5,7 @@ var EmployeeView = function (employee) {
         this.$el.on('click', '.add-location-btn', this.addLocation);
         this.$el.on('click', '.add-contact-btn', this.addToContacts);
         this.$el.on('click', '.change-pic-btn', this.changePicture);
+        this.$el.on('click', '.play-vid-btn', this.playVideo);
     };
 
     this.render = function () {
@@ -63,6 +64,26 @@ var EmployeeView = function (employee) {
             },
             options);
 
+        return false;
+    };
+
+    this.playVideo = function (event) {
+        event.preventDefault();
+        $('.videoPlayerDiv').show();
+        var filename = "small.mp4";
+        var videoURL = "http://techslides.com/demos/sample-videos/small.mp4";
+
+        requestFileSystem(PERSISTENT, 0, function (fileSystem) {
+            var ft = new FileTransfer();
+            ft.download(videoURL, fileSystem.root.toURL() + "/" + filename, function (entry) {
+                var videoElement = document.createElement('video');
+                videoElement.controls = 'controls';
+                videoElement.src = entry.toNativeURL();
+                document.videoElementById("output").appendChild(imgElement);
+            });
+        });
+        //player.load();
+        //player.play();
         return false;
     };
 
