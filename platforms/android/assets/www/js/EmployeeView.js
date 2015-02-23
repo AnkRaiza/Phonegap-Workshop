@@ -78,7 +78,7 @@ var EmployeeView = function (employee) {
             ft.download(videoURL, fileSystem.root.toURL() + "/" + filename, function (entry) {
                 var videoElement = document.createElement('video');
                 videoElement.controls = 'controls';
-                videoElement.src = entry.toNativeURL();
+                videoElement.src = entry.toURL();
                 document.videoElementById("videoPlayerDiv").appendChild(imgElement);
             });
         });
