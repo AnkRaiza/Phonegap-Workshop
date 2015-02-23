@@ -1,41 +1,34 @@
-// We use an "Immediate Function" to initialize the application to avoid leaving anything behind in the global scope
-(function () {
+var app = {
 
-    /* ---------------------------------- Local Variables ---------------------------------- */
-    var service = new EmployeeService();
-    var homeTpl = Handlebars.compile($("#home-tpl").html());
-    var employeeListTpl = Handlebars.compile($("#employee-list-tpl").html());
-    service.initialize().done(function () {
-        renderHomeView();
-    });
-
-    /* --------------------------------- Event Registration -------------------------------- */
-    document.addEventListener('deviceready', function () {
-        if (navigator.notification) { // Override default HTML alert with native dialog
-            window.alert = function (message) {
-                navigator.notification.alert(
-				message,    // message
-				null,       // callback
-				"Workshop", // title
-				'OK'        // buttonName
-				);
-            };
-        }
-        FastClick.attach(document.body);
-    }, false);
-    $('.help-btn').on('click', function () {
-        alert("Employee Directory v3.4");
-    });
-
-    /* ---------------------------------- Local Functions ---------------------------------- */
-    function findByName() {
-        service.findByName($('.search-key').val()).done(function (employees) {
-            $('.content').html(employeeListTpl(employees));
+    initialize: function () {
+        var self = this;
+        this.store = new EmployeeService(function () {
+            $('body').html(new HomeView(self.store).render().el);
         });
-    }
+    },
 
-    function renderHomeView() {
-        $('body').html(homeTpl());
-        $('.search-key').on('keyup', findByName);
-    }
-}());
+    registerEvents: function () {
+        var self = this;
+        // Check of browser supports touch events...
+        if (document.documentElement.hasOwnProperty('ontouchstart')) {
+            // ... if yes: register touch event listener to change the "selected" state of the item
+            $('body').on('touchstart', 'a', function (event) {
+                $(event.target).addClass('tappable-active');
+            });
+            $('body').on('touchend', 'a', function (event) {
+                $(event.target).removeClass('tappable-active');
+            });
+        } else {
+            // ... if not: register mouse events instead
+            $('body').on('mousedown', 'a', function (event) {
+                $(event.target).addClass('tappable-active');
+            });
+            $('body').on('mouseup', 'a', function (event) {
+                $(event.target).removeClass('tappable-active');
+            });
+        }
+    },
+
+};
+
+app.initialize();
