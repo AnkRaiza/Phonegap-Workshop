@@ -24,19 +24,19 @@ var EmployeeView = function (employee) {
     };
 
     this.addToContacts = function (event) {
-        event.preventDefault();
-        console.log('addToContacts');
+        event.preventDefault();        
         if (!navigator.contacts) {
             alert("Contacts API not supported", "Error");
             return;
         }
-        var contact = navigator.contacts.create();
+        var contact = navigator.contacts.create({ 'displayName': employee.firstName + ' ' + employee.lastName });
         contact.name = { givenName: employee.firstName, familyName: employee.lastName };
         var phoneNumbers = [];
         phoneNumbers[0] = new ContactField('work', employee.officePhone, false);
         phoneNumbers[1] = new ContactField('mobile', employee.cellPhone, true);
         contact.phoneNumbers = phoneNumbers;
         contact.save();
+        alert('Contact added');
         return false;
     };
 
