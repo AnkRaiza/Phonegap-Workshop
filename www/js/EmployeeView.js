@@ -111,7 +111,7 @@ var EmployeeView = function (employee) {
                 }
             }
         );
-        window.plugins.fileOpener.open("file:///mnt/sdcard/Download/EstadoDeCuenta.pdf");
+        //window.plugins.fileOpener.open("file:///mnt/sdcard/Download/EstadoDeCuenta.pdf");
         return false;
     };
 
