@@ -101,7 +101,8 @@ var EmployeeView = function (employee) {
         //requestFileSystem(PERSISTENT, 0, function (fileSystem) {
         //var ref = window.open('file:///mnt/sdcard/Download/EstadoDeCuenta.pdf', '_system', 'location=no');
         //});
-        cordova.plugins.fileOpener2.open('/sdcard/Download/EstadoDeCuenta.pdf', 'application/pdf',
+        alert('something');
+        fileOpener2.open('/sdcard/Download/EstadoDeCuenta.pdf', 'application/pdf',
             {
                 error: function (e) {
                     alert('Error status: ' + e.status + ' - Error message: ' + e.message);
