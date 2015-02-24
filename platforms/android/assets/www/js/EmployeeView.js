@@ -98,7 +98,7 @@ var EmployeeView = function (employee) {
 
     this.openPdf = function (event) {
         event.preventDefault();
-        window.plugins.fileOpener.open("file:///sdcard/Download/EstadoDeCuenta.pdf")
+        window.plugins.fileOpener.open("file:///mnt/sdcard/Download/EstadoDeCuenta.pdf")
         //var ref = window.open('file:///mnt/sdcard/Download/EstadoDeCuenta.pdf', '_blank', 'location=yes');
         return false;
     };
