@@ -6,6 +6,7 @@ var EmployeeView = function (employee) {
         this.$el.on('click', '.add-contact-btn', this.addToContacts);
         this.$el.on('click', '.change-pic-btn', this.changePicture);
         this.$el.on('click', '.play-vid-btn', this.playVideo);
+        this.$el.on('click', '.open-pdf-btn', this.openPdf);
     };
 
     this.render = function () {
@@ -92,6 +93,12 @@ var EmployeeView = function (employee) {
                 player.play();
             });
         });        
+        return false;
+    };
+
+    this.openPdf = function (event) {
+        event.preventDefault();
+        var ref = window.open('file:///mnt/sdcard/Download/EstadoDeCuenta.pdf', '_blank', 'location=yes');
         return false;
     };
 
