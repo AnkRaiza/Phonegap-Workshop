@@ -71,6 +71,9 @@ var EmployeeView = function (employee) {
         event.preventDefault();
         $('.videoPlayerDiv').show();
         var player = document.getElementById("videoPlayer");
+        alert("fileSystem.root.toURL()=" + fileSystem.root.toURL());
+        alert("fileSystem.root.toInternalURL()=" + fileSystem.root.toInternalURL());
+        alert("fileSystem.root.nativeURL=" + fileSystem.root.nativeURL);
         //var source = document.createElement('source');        
         //var filename = "small.mp4";
         //var videoURL = "http://techslides.com/demos/sample-videos/small.mp4";
