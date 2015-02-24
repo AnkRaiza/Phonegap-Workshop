@@ -35,6 +35,10 @@
                         {
                             "xml": "<feature name=\"FileOpener\"><param name=\"android-package\" value=\"com.phonegap.plugins.fileopener.FileOpener\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FileOpener2\"><param name=\"android-package\" value=\"io.github.pwlin.cordova.plugins.fileopener2.FileOpener2\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -65,6 +69,10 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -97,6 +105,9 @@
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
         "com.phonegap.plugins.fileopener": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "io.github.pwlin.cordova.plugins.fileopener2": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         }
     },

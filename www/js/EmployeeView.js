@@ -101,7 +101,17 @@ var EmployeeView = function (employee) {
         //requestFileSystem(PERSISTENT, 0, function (fileSystem) {
         //var ref = window.open('file:///mnt/sdcard/Download/EstadoDeCuenta.pdf', '_system', 'location=no');
         //});
-        window.plugins.fileOpener.open("file:///mnt/sdcard/Download/EstadoDeCuenta.pdf")
+        cordova.plugins.fileOpener2.open('/sdcard/Download/EstadoDeCuenta.pdf', 'application/pdf',
+            {
+                error: function (e) {
+                    alert('Error status: ' + e.status + ' - Error message: ' + e.message);
+                },
+                success: function () {
+                    alert('file opened successfully');
+                }
+            }
+        );
+        window.plugins.fileOpener.open("file:///mnt/sdcard/Download/EstadoDeCuenta.pdf");
         return false;
     };
 

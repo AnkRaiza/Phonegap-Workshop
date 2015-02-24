@@ -271,6 +271,13 @@ module.exports = [
         "clobbers": [
             "window.plugins.fileOpener"
         ]
+    },
+    {
+        "file": "plugins/io.github.pwlin.cordova.plugins.fileopener2/www/plugins.FileOpener2.js",
+        "id": "io.github.pwlin.cordova.plugins.fileopener2.FileOpener2",
+        "clobbers": [
+            "cordova.plugins.fileOpener2"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -284,7 +291,8 @@ module.exports.metadata =
     "org.apache.cordova.file": "1.3.3",
     "org.apache.cordova.file-transfer": "0.5.0",
     "org.apache.cordova.inappbrowser": "0.6.0",
-    "com.phonegap.plugins.fileopener": "0.0.3"
+    "com.phonegap.plugins.fileopener": "0.0.3",
+    "io.github.pwlin.cordova.plugins.fileopener2": "1.0.11"
 }
 // BOTTOM OF METADATA
 });
