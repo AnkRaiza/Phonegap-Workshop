@@ -31,6 +31,10 @@
                         {
                             "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FileOpener\"><param name=\"android-package\" value=\"com.phonegap.plugins.fileopener.FileOpener\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -90,6 +94,9 @@
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
         "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "com.phonegap.plugins.fileopener": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         }
     },

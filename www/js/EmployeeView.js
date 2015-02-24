@@ -99,9 +99,9 @@ var EmployeeView = function (employee) {
     this.openPdf = function (event) {
         event.preventDefault();
         //requestFileSystem(PERSISTENT, 0, function (fileSystem) {
-        var ref = window.open('http://docs.google.com/viewer?url=file:///mnt/sdcard/Download/EstadoDeCuenta.pdf', '_blank', 'location=yes');
+        //var ref = window.open('file:///mnt/sdcard/Download/EstadoDeCuenta.pdf', '_system', 'location=no');
         //});
-        //window.plugins.fileOpener.open("file:///mnt/sdcard/Download/EstadoDeCuenta.pdf")        
+        window.plugins.fileOpener.open("file:///sdcard/Download/EstadoDeCuenta.pdf")        
         return false;
     };
 

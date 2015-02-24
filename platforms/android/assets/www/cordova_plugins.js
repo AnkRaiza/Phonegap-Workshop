@@ -264,6 +264,13 @@ module.exports = [
         "clobbers": [
             "window.open"
         ]
+    },
+    {
+        "file": "plugins/com.phonegap.plugins.fileopener/www/fileopener.js",
+        "id": "com.phonegap.plugins.fileopener.FileOpener",
+        "clobbers": [
+            "window.plugins.fileOpener"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -276,7 +283,8 @@ module.exports.metadata =
     "org.apache.cordova.camera": "0.3.5",
     "org.apache.cordova.file": "1.3.3",
     "org.apache.cordova.file-transfer": "0.5.0",
-    "org.apache.cordova.inappbrowser": "0.6.0"
+    "org.apache.cordova.inappbrowser": "0.6.0",
+    "com.phonegap.plugins.fileopener": "0.0.3"
 }
 // BOTTOM OF METADATA
 });
