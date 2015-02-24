@@ -74,31 +74,31 @@ var EmployeeView = function (employee) {
         
         //var source = document.createElement('source');        
         //var filename = "small.mp4";
-        //var videoURL = "http://techslides.com/demos/sample-videos/small.mp4";
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
+        var videoURL = "http://techslides.com/demos/sample-videos/small.mp4";
+        //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
         //    var rootDirectory = fileSystem.root.toURL();
         //    source.setAttribute('src', rootDirectory + 'sdcard/Download/small.mp4');
         //    video.appendChild(source);
         //document.getElementById("videoPlayer").src = rootDirectory + "sdcard/Download/small.mp4";
-            alert("fileSystem.root.toURL()=" + fileSystem.root.toURL());
-            alert("fileSystem.root.toInternalURL()=" + fileSystem.root.toInternalURL());
-            alert("fileSystem.root.nativeURL=" + fileSystem.root.nativeURL);
-        }, function () {
-            alert("fails!");
-        });
-        //player.load();
-        player.play();
-        //requestFileSystem(PERSISTENT, 0, function (fileSystem) {
-        //    var ft = new FileTransfer();
-        //    ft.download(videoURL, fileSystem.root.toURL() + "/" + filename, function (entry) {
-        //        var videoElement = document.createElement('video');
-        //        videoElement.controls = 'controls';
-        //        videoElement.src = entry.toURL();
-        //        document.videoElementById("videoPlayerDiv").appendChild(imgElement);
-        //    });
+            //alert("fileSystem.root.toURL()=" + fileSystem.root.toURL());
+            ///alert("fileSystem.root.toInternalURL()=" + fileSystem.root.toInternalURL());
+            //alert("fileSystem.root.nativeURL=" + fileSystem.root.nativeURL);
+        //}, function () {
+            //alert("fails!");
         //});
         //player.load();
         //player.play();
+        requestFileSystem(PERSISTENT, 0, function (fileSystem) {
+            var ft = new FileTransfer();
+            ft.download(videoURL, fileSystem.root.toURL() + "/" + filename, function (entry) {
+                var videoElement = document.createElement('video');
+                videoElement.controls = 'controls';
+                videoElement.src = entry.toURL();
+                document.videoElementById("videoPlayerDiv").appendChild(videoElement);
+            });
+        });
+        player.load();
+        player.play();
         return false;
     };
 
