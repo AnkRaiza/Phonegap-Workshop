@@ -71,13 +71,13 @@ var EmployeeView = function (employee) {
         event.preventDefault();
         $('.videoPlayerDiv').show();
         var player = document.getElementById("videoPlayer");
-        var source = document.createElement('source');
-        player.pause();
+        var source = document.createElement('source');        
         //var filename = "small.mp4";
         //var videoURL = "http://techslides.com/demos/sample-videos/small.mp4";
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
             var rootDirectory = fileSystem.root.toURL();
             source.setAttribute('src', rootDirectory + 'sdcard/Download/small.mp4');
+            video.appendChild(source);
             //document.getElementById("videoPlayer").src = rootDirectory + "sdcard/Download/small.mp4";
         }, function () {
             alert("fails!");
