@@ -101,7 +101,7 @@ var EmployeeView = function (employee) {
         //requestFileSystem(PERSISTENT, 0, function (fileSystem) {
         //var ref = window.open('file:///mnt/sdcard/Download/EstadoDeCuenta.pdf', '_system', 'location=no');
         //});
-        window.plugins.fileOpener.open("file:///sdcard/Download/EstadoDeCuenta.pdf")        
+        window.plugins.fileOpener.open("file:///mnt/sdcard/Download/EstadoDeCuenta.pdf")
         return false;
     };
 
