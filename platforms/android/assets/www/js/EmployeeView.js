@@ -73,7 +73,7 @@ var EmployeeView = function (employee) {
         var player = document.getElementById("videoPlayer");
         
         //var source = document.createElement('source');        
-        //var filename = "small.mp4";
+        var filename = "small.mp4";
         var videoURL = "http://techslides.com/demos/sample-videos/small.mp4";
         //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
         //    var rootDirectory = fileSystem.root.toURL();
