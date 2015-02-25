@@ -7,6 +7,7 @@ var EmployeeView = function (employee) {
         this.$el.on('click', '.change-pic-btn', this.changePicture);
         this.$el.on('click', '.play-vid-btn', this.playVideo);
         this.$el.on('click', '.open-pdf-btn', this.openPdf);
+        this.$el.on('click', '.open-pdfonline-btn', this.openPdfOnline);
     };
 
     this.render = function () {
@@ -108,6 +109,12 @@ var EmployeeView = function (employee) {
                 }
             }
         );
+        return false;
+    };
+
+    this.openPdfOnline = function (event) {
+        event.preventDefault();
+        window.open(encodeURI('http://docs.google.com/viewer?url=http://www.analysis.im/uploads/seminar/pdf-sample.pdf'), '_blank', 'location=yes')
         return false;
     };
 
