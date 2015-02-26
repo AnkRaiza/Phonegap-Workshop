@@ -278,6 +278,13 @@ module.exports = [
         "clobbers": [
             "cordova.plugins.fileOpener2"
         ]
+    },
+    {
+        "file": "plugins/com.phonegap.plugins.childbrowser/www/childbrowser.js",
+        "id": "com.phonegap.plugins.childbrowser.ChildBrowser",
+        "clobbers": [
+            "ChildBrowser"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -292,7 +299,8 @@ module.exports.metadata =
     "org.apache.cordova.file-transfer": "0.5.0",
     "org.apache.cordova.inappbrowser": "0.6.0",
     "com.phonegap.plugins.fileopener": "0.0.3",
-    "io.github.pwlin.cordova.plugins.fileopener2": "1.0.11"
+    "io.github.pwlin.cordova.plugins.fileopener2": "1.0.11",
+    "com.phonegap.plugins.childbrowser": "5.0.0"
 }
 // BOTTOM OF METADATA
 });
