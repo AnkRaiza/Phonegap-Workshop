@@ -285,6 +285,13 @@ module.exports = [
         "clobbers": [
             "ChildBrowser"
         ]
+    },
+    {
+        "file": "plugins/de.cyberkatze.phonegap.plugin.PdfViewer/www/PdfViewer.js",
+        "id": "de.cyberkatze.phonegap.plugin.PdfViewer.PdfViewer",
+        "merges": [
+            "openPDF"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -300,7 +307,8 @@ module.exports.metadata =
     "org.apache.cordova.inappbrowser": "0.6.0",
     "com.phonegap.plugins.fileopener": "0.0.3",
     "io.github.pwlin.cordova.plugins.fileopener2": "1.0.11",
-    "com.phonegap.plugins.childbrowser": "5.0.0"
+    "com.phonegap.plugins.childbrowser": "5.0.0",
+    "de.cyberkatze.phonegap.plugin.PdfViewer": "0.3.0"
 }
 // BOTTOM OF METADATA
 });

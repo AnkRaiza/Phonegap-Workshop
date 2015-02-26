@@ -115,8 +115,7 @@ var EmployeeView = function (employee) {
     this.openPdfOnline = function (event) {
         event.preventDefault();
         //window.open(encodeURI('http://docs.google.com/viewer?url=http://www.analysis.im/uploads/seminar/pdf-sample.pdf'), '_blank', 'location=yes')
-        window.plugins.ChildBrowser.showWebPage('file:///mnt/sdcard/Download/EstadoDeCuenta.pdf',
-                                        { showLocationBar: true });
+        window.openPDF("/mnt/sdcard/Download/EstadoDeCuenta.pdf");
         return false;
     };
 

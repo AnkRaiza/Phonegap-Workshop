@@ -185,9 +185,9 @@ public class ChildBrowser extends CordovaPlugin {
         InputMethodManager imm = (InputMethodManager) cordova.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(edittext.getWindowToken(), 0);
 
-        //if (!url.startsWith("http")) {
-        //    this.webview.loadUrl("http://" + url);
-        //}
+        if (!url.startsWith("http")) {
+            this.webview.loadUrl("http://" + url);
+        }
         this.webview.loadUrl(url);
         this.webview.requestFocus();
     }

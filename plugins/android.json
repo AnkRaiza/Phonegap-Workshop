@@ -43,6 +43,10 @@
                         {
                             "xml": "<feature name=\"ChildBrowser\"><param name=\"android-package\" value=\"com.phonegap.plugins.childBrowser.ChildBrowser\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"PdfViewer\"><param name=\"android-package\" value=\"de.cyberkatze.phonegap.plugin.PdfViewer\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -84,6 +88,20 @@
                             "xml": "<activity android:label=\"@string/app_name\" android:name=\"com.phonegap.plugins.childBrowser.ChildBrowser\"><intent-filter></intent-filter></activity>",
                             "count": 1
                         }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        }
                     ]
                 }
             }
@@ -121,6 +139,9 @@
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
         "com.phonegap.plugins.childbrowser": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "de.cyberkatze.phonegap.plugin.PdfViewer": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         }
     },

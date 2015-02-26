@@ -29,6 +29,9 @@
     <feature name="ChildBrowser">
         <param name="android-package" value="com.phonegap.plugins.childBrowser.ChildBrowser" />
     </feature>
+    <feature name="PdfViewer">
+        <param name="android-package" value="de.cyberkatze.phonegap.plugin.PdfViewer" />
+    </feature>
     <name>Hello World</name>
     <description>
         Hello World sample application that responds to the deviceready event.
